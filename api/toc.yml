@@ -1,0 +1,619 @@
+### YamlMime:TableOfContent
+items:
+- uid: CustomSaveTx
+  name: CustomSaveTx
+  items:
+  - uid: CustomSaveTx.DeathPersistentSaveDataRx
+    name: DeathPersistentSaveDataRx
+  - uid: CustomSaveTx.DeathPersistentSaveDataTx
+    name: DeathPersistentSaveDataTx
+  - uid: CustomSaveTx.TestSaveUnit
+    name: TestSaveUnit
+- uid: RandomBuff
+  name: RandomBuff
+  items:
+  - uid: RandomBuff.AnimateComponentBase
+    name: AnimateComponentBase
+  - uid: RandomBuff.AnimateComponent`1
+    name: AnimateComponent<T>
+  - uid: RandomBuff.BuffCore
+    name: BuffCore
+  - uid: RandomBuff.BuffEnums
+    name: BuffEnums
+  - uid: RandomBuff.BuffEnums.ProcessID
+    name: BuffEnums.ProcessID
+  - uid: RandomBuff.BuffResourceString
+    name: BuffResourceString
+  - uid: RandomBuff.DelayCmpnt
+    name: DelayCmpnt
+  - uid: RandomBuff.Helper
+    name: Helper
+  - uid: RandomBuff.Helper.DynamicImitator
+    name: Helper.DynamicImitator
+  - uid: RandomBuff.Helper.InputButtonTracker
+    name: Helper.InputButtonTracker
+  - uid: RandomBuff.LerpAnimCmpnt
+    name: LerpAnimCmpnt
+  - uid: RandomBuff.TickAnimCmpnt
+    name: TickAnimCmpnt
+- uid: RandomBuff.Cardpedia
+  name: RandomBuff.Cardpedia
+  items:
+  - uid: RandomBuff.Cardpedia.CardpediaMenuHooks
+    name: CardpediaMenuHooks
+  - uid: RandomBuff.Cardpedia.OpFNodeWrapper
+    name: OpFNodeWrapper
+  - uid: RandomBuff.Cardpedia.ScruffyPool
+    name: ScruffyPool
+- uid: RandomBuff.Cardpedia.Elements
+  name: RandomBuff.Cardpedia.Elements
+  items:
+  - uid: RandomBuff.Cardpedia.Elements.BigFancyButton
+    name: BigFancyButton
+  - uid: RandomBuff.Cardpedia.Elements.CardpediaTextBox
+    name: CardpediaTextBox
+- uid: RandomBuff.Cardpedia.InfoPageRender
+  name: RandomBuff.Cardpedia.InfoPageRender
+  items:
+  - uid: RandomBuff.Cardpedia.InfoPageRender.PediaCamera
+    name: PediaCamera
+  - uid: RandomBuff.Cardpedia.InfoPageRender.PediaText
+    name: PediaText
+  - uid: RandomBuff.Cardpedia.InfoPageRender.PediaTextRenderer
+    name: PediaTextRenderer
+- uid: RandomBuff.Core.Buff
+  name: RandomBuff.Core.Buff
+  items:
+  - uid: RandomBuff.Core.Buff.BuffData
+    name: BuffData
+  - uid: RandomBuff.Core.Buff.BuffID
+    name: BuffID
+  - uid: RandomBuff.Core.Buff.BuffProperty
+    name: BuffProperty
+  - uid: RandomBuff.Core.Buff.BuffStaticData
+    name: BuffStaticData
+  - uid: RandomBuff.Core.Buff.BuffTimer
+    name: BuffTimer
+  - uid: RandomBuff.Core.Buff.BuffTimerDisplayStrategy
+    name: BuffTimerDisplayStrategy
+  - uid: RandomBuff.Core.Buff.BuffType
+    name: BuffType
+  - uid: RandomBuff.Core.Buff.Buff`2
+    name: Buff<TBuff, TData>
+  - uid: RandomBuff.Core.Buff.CountableBuffData
+    name: CountableBuffData
+  - uid: RandomBuff.Core.Buff.DownCountBuffTimer
+    name: DownCountBuffTimer
+  - uid: RandomBuff.Core.Buff.IBuff
+    name: IBuff
+  - uid: RandomBuff.Core.Buff.RuntimeBuff
+    name: RuntimeBuff
+  - uid: RandomBuff.Core.Buff.SpanTimerDisplayStrategy
+    name: SpanTimerDisplayStrategy
+  - uid: RandomBuff.Core.Buff.SpanTimerDisplayStrategy.BuffTimeSpan
+    name: SpanTimerDisplayStrategy.BuffTimeSpan
+  - uid: RandomBuff.Core.Buff.StepedCountBuffTimer
+    name: StepedCountBuffTimer
+  - uid: RandomBuff.Core.Buff.UpCountBuffTimer
+    name: UpCountBuffTimer
+- uid: RandomBuff.Core.BuffMenu
+  name: RandomBuff.Core.BuffMenu
+  items:
+  - uid: RandomBuff.Core.BuffMenu.BuffGameMenuStatics
+    name: BuffGameMenuStatics
+  - uid: RandomBuff.Core.BuffMenu.FNodeWrapper
+    name: FNodeWrapper
+  - uid: RandomBuff.Core.BuffMenu.SimpleImageButton
+    name: SimpleImageButton
+  - uid: RandomBuff.Core.BuffMenu.SlugcatIllustrationPage
+    name: SlugcatIllustrationPage
+- uid: RandomBuff.Core.Entry
+  name: RandomBuff.Core.Entry
+  items:
+  - uid: RandomBuff.Core.Entry.BuffRegister
+    name: BuffRegister
+  - uid: RandomBuff.Core.Entry.BuffRegister.ConditionType
+    name: BuffRegister.ConditionType
+  - uid: RandomBuff.Core.Entry.BuffRegister.GachaTemplateType
+    name: BuffRegister.GachaTemplateType
+  - uid: RandomBuff.Core.Entry.HookLifeTimeLevel
+    name: HookLifeTimeLevel
+  - uid: RandomBuff.Core.Entry.IBuffEntry
+    name: IBuffEntry
+- uid: RandomBuff.Core.Game
+  name: RandomBuff.Core.Game
+  items:
+  - uid: RandomBuff.Core.Game.BuffHudPart
+    name: BuffHudPart
+  - uid: RandomBuff.Core.Game.BuffHudPart.IOwnBuffHudPart
+    name: BuffHudPart.IOwnBuffHudPart
+  - uid: RandomBuff.Core.Game.TemporaryBuffPool
+    name: TemporaryBuffPool
+  - uid: RandomBuff.Core.Game.WinGamePackage
+    name: WinGamePackage
+- uid: RandomBuff.Core.Game.Settings
+  name: RandomBuff.Core.Game.Settings
+  items:
+  - uid: RandomBuff.Core.Game.Settings.GameSetting
+    name: GameSetting
+- uid: RandomBuff.Core.Game.Settings.Conditions
+  name: RandomBuff.Core.Game.Settings.Conditions
+  items:
+  - uid: RandomBuff.Core.Game.Settings.Conditions.AchievementCondition
+    name: AchievementCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.CardCondition
+    name: CardCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.Condition
+    name: Condition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.Condition.ConditionState
+    name: Condition.ConditionState
+  - uid: RandomBuff.Core.Game.Settings.Conditions.ConditionID
+    name: ConditionID
+  - uid: RandomBuff.Core.Game.Settings.Conditions.CycleCondition
+    name: CycleCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.CycleScoreCondition
+    name: CycleScoreCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.DeathCondition
+    name: DeathCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.ExterminationCondition
+    name: ExterminationCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.ExterminationCondition.CreatureDmgSourceRecord
+    name: ExterminationCondition.CreatureDmgSourceRecord
+  - uid: RandomBuff.Core.Game.Settings.Conditions.FixedCycleCondition
+    name: FixedCycleCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.GourmandCondition
+    name: GourmandCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.HuntCondition
+    name: HuntCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.LikeCondition
+    name: LikeCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.MeetSS_SLCondition
+    name: MeetSS_SLCondition
+  - uid: RandomBuff.Core.Game.Settings.Conditions.ScoreCondition
+    name: ScoreCondition
+- uid: RandomBuff.Core.Game.Settings.GachaTemplate
+  name: RandomBuff.Core.Game.Settings.GachaTemplate
+  items:
+  - uid: RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate
+    name: GachaTemplate
+  - uid: RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.CachaPacket
+    name: GachaTemplate.CachaPacket
+  - uid: RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplateID
+    name: GachaTemplateID
+  - uid: RandomBuff.Core.Game.Settings.GachaTemplate.MissionGachaTemplate
+    name: MissionGachaTemplate
+  - uid: RandomBuff.Core.Game.Settings.GachaTemplate.NormalGachaTemplate
+    name: NormalGachaTemplate
+- uid: RandomBuff.Core.Game.Settings.Missions
+  name: RandomBuff.Core.Game.Settings.Missions
+  items:
+  - uid: RandomBuff.Core.Game.Settings.Missions.IMissionEntry
+    name: IMissionEntry
+  - uid: RandomBuff.Core.Game.Settings.Missions.Mission
+    name: Mission
+  - uid: RandomBuff.Core.Game.Settings.Missions.MissionID
+    name: MissionID
+  - uid: RandomBuff.Core.Game.Settings.Missions.MissionRegister
+    name: MissionRegister
+- uid: RandomBuff.Core.Progression
+  name: RandomBuff.Core.Progression
+  items:
+  - uid: RandomBuff.Core.Progression.CosmeticUnlock
+    name: CosmeticUnlock
+  - uid: RandomBuff.Core.Progression.CosmeticUnlockID
+    name: CosmeticUnlockID
+- uid: RandomBuff.Core.Progression.CosmeticUnlocks
+  name: RandomBuff.Core.Progression.CosmeticUnlocks
+  items:
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.FakeFood
+    name: FakeFood
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.FakeFoodPool
+    name: FakeFoodPool
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.FoodBagGraphicUtils
+    name: FoodBagGraphicUtils
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.FoodBagGraphicsModule
+    name: FoodBagGraphicsModule
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.MeteorSpearUtils
+    name: MeteorSpearUtils
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.MeteorTail
+    name: MeteorTail
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.SetAscendCirclePosAndVel
+    name: SetAscendCirclePosAndVel
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.SetAscendKarmaBurstPosAndVel
+    name: SetAscendKarmaBurstPosAndVel
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.SoapBubble
+    name: SoapBubble
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.SoapBubblePool
+    name: SoapBubblePool
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.SoapSlugModule
+    name: SoapSlugModule
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.SoapSlugUtils
+    name: SoapSlugUtils
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.StoredExplosionSpike
+    name: StoredExplosionSpike
+  - uid: RandomBuff.Core.Progression.CosmeticUnlocks.TailPool
+    name: TailPool
+- uid: RandomBuff.Core.Progression.Quest
+  name: RandomBuff.Core.Progression.Quest
+  items:
+  - uid: RandomBuff.Core.Progression.Quest.BuffQuest
+    name: BuffQuest
+  - uid: RandomBuff.Core.Progression.Quest.QuestUnlockedType
+    name: QuestUnlockedType
+- uid: RandomBuff.Core.Progression.Quest.Condition
+  name: RandomBuff.Core.Progression.Quest.Condition
+  items:
+  - uid: RandomBuff.Core.Progression.Quest.Condition.QuestCondition
+    name: QuestCondition
+  - uid: RandomBuff.Core.Progression.Quest.Condition.QuestConditionJsonGetType
+    name: QuestConditionJsonGetType
+- uid: RandomBuff.Core.Progression.Record
+  name: RandomBuff.Core.Progression.Record
+  items:
+  - uid: RandomBuff.Core.Progression.Record.BuffRecord
+    name: BuffRecord
+  - uid: RandomBuff.Core.Progression.Record.InGameRecord
+    name: InGameRecord
+  - uid: RandomBuff.Core.Progression.Record.SlotRecord
+    name: SlotRecord
+- uid: RandomBuff.Core.ProgressionUI
+  name: RandomBuff.Core.ProgressionUI
+  items:
+  - uid: RandomBuff.Core.ProgressionUI.CosmeticButton
+    name: CosmeticButton
+  - uid: RandomBuff.Core.ProgressionUI.QuestButton
+    name: QuestButton
+  - uid: RandomBuff.Core.ProgressionUI.QuestButton.QuestInfo
+    name: QuestButton.QuestInfo
+  - uid: RandomBuff.Core.ProgressionUI.QuestInfoHoverBox
+    name: QuestInfoHoverBox
+- uid: RandomBuff.Core.SaveData
+  name: RandomBuff.Core.SaveData
+  items:
+  - uid: RandomBuff.Core.SaveData.BuffConfigManager
+    name: BuffConfigManager
+  - uid: RandomBuff.Core.SaveData.BuffFormatVersion
+    name: BuffFormatVersion
+- uid: RandomBuff.Core.SaveData.BuffConfig
+  name: RandomBuff.Core.SaveData.BuffConfig
+  items:
+  - uid: RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigAttribute
+    name: CustomBuffConfigAttribute
+  - uid: RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigEnumAttribute
+    name: CustomBuffConfigEnumAttribute
+  - uid: RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigInfoAttribute
+    name: CustomBuffConfigInfoAttribute
+  - uid: RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigListAttribute
+    name: CustomBuffConfigListAttribute
+  - uid: RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigRangeAttribute
+    name: CustomBuffConfigRangeAttribute
+  - uid: RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigTwoValueAttribute
+    name: CustomBuffConfigTwoValueAttribute
+  - uid: RandomBuff.Core.SaveData.BuffConfig.DefaultTypeSerializer
+    name: DefaultTypeSerializer
+  - uid: RandomBuff.Core.SaveData.BuffConfig.ExtEnumSerializer
+    name: ExtEnumSerializer
+  - uid: RandomBuff.Core.SaveData.BuffConfig.TypeSerializer
+    name: TypeSerializer
+  - uid: RandomBuff.Core.SaveData.BuffConfig.UnityTypeSerializer`1
+    name: UnityTypeSerializer<TUnityType>
+- uid: RandomBuff.Credit
+  name: RandomBuff.Credit
+  items:
+  - uid: RandomBuff.Credit.CreditStageType
+    name: CreditStageType
+- uid: RandomBuff.Render.Quest
+  name: RandomBuff.Render.Quest
+  items:
+  - uid: RandomBuff.Render.Quest.IQuestRenderer
+    name: IQuestRenderer
+  - uid: RandomBuff.Render.Quest.QuestRenderer
+    name: QuestRenderer
+  - uid: RandomBuff.Render.Quest.QuestRendererManager
+    name: QuestRendererManager
+  - uid: RandomBuff.Render.Quest.QuestRendererManager.Mode
+    name: QuestRendererManager.Mode
+  - uid: RandomBuff.Render.Quest.QuestRendererManager.QuestLeaser
+    name: QuestRendererManager.QuestLeaser
+  - uid: RandomBuff.Render.Quest.QuestRendererProvider
+    name: QuestRendererProvider
+- uid: RandomBuff.Render.UI
+  name: RandomBuff.Render.UI
+  items:
+  - uid: RandomBuff.Render.UI.HelpInfoProvider
+    name: HelpInfoProvider
+  - uid: RandomBuff.Render.UI.HelpInfoProvider.CustomHelpInfoProvider
+    name: HelpInfoProvider.CustomHelpInfoProvider
+  - uid: RandomBuff.Render.UI.HelpInfoProvider.HelpInfoID
+    name: HelpInfoProvider.HelpInfoID
+  - uid: RandomBuff.Render.UI.IInputAgencyFocusable
+    name: IInputAgencyFocusable
+- uid: RandomBuff.Render.UI.Component
+  name: RandomBuff.Render.UI.Component
+  items:
+  - uid: RandomBuff.Render.UI.Component.FlagColorModules
+    name: FlagColorModules
+  - uid: RandomBuff.Render.UI.Component.FlagColorModules.ColorModule
+    name: FlagColorModules.ColorModule
+  - uid: RandomBuff.Render.UI.Component.FlagColorModules.MetalColorModule
+    name: FlagColorModules.MetalColorModule
+  - uid: RandomBuff.Render.UI.Component.FlagColorModules.NormalColorModule
+    name: FlagColorModules.NormalColorModule
+  - uid: RandomBuff.Render.UI.Component.FlagRenderer
+    name: FlagRenderer
+  - uid: RandomBuff.Render.UI.Component.RandomBuffFlag
+    name: RandomBuffFlag
+  - uid: RandomBuff.Render.UI.Component.RandomBuffFlag.BaseForce
+    name: RandomBuffFlag.BaseForce
+  - uid: RandomBuff.Render.UI.Component.RandomBuffFlag.BaseWind
+    name: RandomBuffFlag.BaseWind
+  - uid: RandomBuff.Render.UI.Component.RandomBuffFlag.Spring
+    name: RandomBuffFlag.Spring
+  - uid: RandomBuff.Render.UI.Component.RandomBuffFlag.Vert
+    name: RandomBuffFlag.Vert
+  - uid: RandomBuff.Render.UI.Component.RandomBuffFlagRenderer
+    name: RandomBuffFlagRenderer
+  - uid: RandomBuff.Render.UI.Component.RandomBuffFlagRenderer.FlagColorType
+    name: RandomBuffFlagRenderer.FlagColorType
+  - uid: RandomBuff.Render.UI.Component.RandomBuffFlagRenderer.FlagType
+    name: RandomBuffFlagRenderer.FlagType
+  - uid: RandomBuff.Render.UI.Component.TestFlagRenderer
+    name: TestFlagRenderer
+- uid: RandomBuff.Render.UI.ExceptionTracker
+  name: RandomBuff.Render.UI.ExceptionTracker
+  items:
+  - uid: RandomBuff.Render.UI.ExceptionTracker.ExceptionTracker
+    name: ExceptionTracker
+  - uid: RandomBuff.Render.UI.ExceptionTracker.ExceptionTracker.ExceptionButton
+    name: ExceptionTracker.ExceptionButton
+  - uid: RandomBuff.Render.UI.ExceptionTracker.ExceptionTracker.TrackedException
+    name: ExceptionTracker.TrackedException
+- uid: RandomBuffUtils
+  name: RandomBuffUtils
+  items:
+  - uid: RandomBuffUtils.BuffCustom
+    name: BuffCustom
+  - uid: RandomBuffUtils.BuffEvent
+    name: BuffEvent
+  - uid: RandomBuffUtils.BuffEvent.AchievementCompleteHandler
+    name: BuffEvent.AchievementCompleteHandler
+  - uid: RandomBuffUtils.BuffEvent.CreatureKilledHandler
+    name: BuffEvent.CreatureKilledHandler
+  - uid: RandomBuffUtils.BuffEvent.ExtraDialogBoxHandler
+    name: BuffEvent.ExtraDialogBoxHandler
+  - uid: RandomBuffUtils.BuffEvent.KeyDownHandler
+    name: BuffEvent.KeyDownHandler
+  - uid: RandomBuffUtils.BuffEvent.NewRoomHandler
+    name: BuffEvent.NewRoomHandler
+  - uid: RandomBuffUtils.BuffEvent.ReachNewRoomHandler
+    name: BuffEvent.ReachNewRoomHandler
+  - uid: RandomBuffUtils.BuffEvent.RegionGateHandler
+    name: BuffEvent.RegionGateHandler
+  - uid: RandomBuffUtils.BuffInput
+    name: BuffInput
+  - uid: RandomBuffUtils.BuffPostEffect
+    name: BuffPostEffect
+  - uid: RandomBuffUtils.BuffPostEffectLimitTime
+    name: BuffPostEffectLimitTime
+  - uid: RandomBuffUtils.BuffPostEffectManager
+    name: BuffPostEffectManager
+  - uid: RandomBuffUtils.BuffPostEffectManager.InsertPosition
+    name: BuffPostEffectManager.InsertPosition
+  - uid: RandomBuffUtils.BuffScene
+    name: BuffScene
+  - uid: RandomBuffUtils.BuffScene.SlideShowData
+    name: BuffScene.SlideShowData
+  - uid: RandomBuffUtils.BuffScene.SlideShowData.SlideShowSceneData
+    name: BuffScene.SlideShowData.SlideShowSceneData
+  - uid: RandomBuffUtils.BuffSoundData
+    name: BuffSoundData
+  - uid: RandomBuffUtils.BuffSoundGroupData
+    name: BuffSoundGroupData
+  - uid: RandomBuffUtils.BuffSounds
+    name: BuffSounds
+  - uid: RandomBuffUtils.BuffUtils
+    name: BuffUtils
+  - uid: RandomBuffUtils.DamageOnlyExplosion
+    name: DamageOnlyExplosion
+  - uid: RandomBuffUtils.ExplosionSpawner
+    name: ExplosionSpawner
+  - uid: RandomBuffUtils.GhostDisplacementEmitter
+    name: GhostDisplacementEmitter
+  - uid: RandomBuffUtils.GhostEffect
+    name: GhostEffect
+  - uid: RandomBuffUtils.GhostEmitter
+    name: GhostEmitter
+  - uid: RandomBuffUtils.GhostPeriodicEmitter
+    name: GhostPeriodicEmitter
+  - uid: RandomBuffUtils.PlayerUtils
+    name: PlayerUtils
+  - uid: RandomBuffUtils.PlayerUtils.IOWnPlayerUtilsPart
+    name: PlayerUtils.IOWnPlayerUtilsPart
+  - uid: RandomBuffUtils.PlayerUtils.OperatorDelegate
+    name: PlayerUtils.OperatorDelegate
+  - uid: RandomBuffUtils.PlayerUtils.PlayerModule
+    name: PlayerUtils.PlayerModule
+  - uid: RandomBuffUtils.PlayerUtils.PlayerModuleGraphicPart
+    name: PlayerUtils.PlayerModuleGraphicPart
+  - uid: RandomBuffUtils.PlayerUtils.PlayerModuleGraphicPart.SLeaserInstance
+    name: PlayerUtils.PlayerModuleGraphicPart.SLeaserInstance
+  - uid: RandomBuffUtils.PlayerUtils.PlayerModulePart
+    name: PlayerUtils.PlayerModulePart
+  - uid: RandomBuffUtils.PlayerUtils.SlugcatStatModifer
+    name: PlayerUtils.SlugcatStatModifer
+  - uid: RandomBuffUtils.PlayerUtils.SlugcatStatStack
+    name: PlayerUtils.SlugcatStatStack
+  - uid: RandomBuffUtils.SimpleRangeDamage
+    name: SimpleRangeDamage
+  - uid: RandomBuffUtils.SteamHelper
+    name: SteamHelper
+  - uid: RandomBuffUtils.SteamHelper.ReceiveAvatarCallBack
+    name: SteamHelper.ReceiveAvatarCallBack
+- uid: RandomBuffUtils.BuffEvents
+  name: RandomBuffUtils.BuffEvents
+  items:
+  - uid: RandomBuffUtils.BuffEvents.BuffRegionGateEvent
+    name: BuffRegionGateEvent
+  - uid: RandomBuffUtils.BuffEvents.BuffRegionGateEvent.RegionGateInstance
+    name: BuffRegionGateEvent.RegionGateInstance
+  - uid: RandomBuffUtils.BuffEvents.BuffRoomReachEvent
+    name: BuffRoomReachEvent
+  - uid: RandomBuffUtils.BuffEvents.ExtraDialogBoxInstance
+    name: ExtraDialogBoxInstance
+- uid: RandomBuffUtils.FutileExtend
+  name: RandomBuffUtils.FutileExtend
+  items:
+  - uid: RandomBuffUtils.FutileExtend.FMesh
+    name: FMesh
+  - uid: RandomBuffUtils.FutileExtend.FMesh.Mesh3DAsset
+    name: FMesh.Mesh3DAsset
+  - uid: RandomBuffUtils.FutileExtend.FMesh.Mesh3DAsset.TriangleFacet
+    name: FMesh.Mesh3DAsset.TriangleFacet
+  - uid: RandomBuffUtils.FutileExtend.FMesh.Mesh3DAsset.TriangleFacet.TriangleArray
+    name: FMesh.Mesh3DAsset.TriangleFacet.TriangleArray
+  - uid: RandomBuffUtils.FutileExtend.MeshManager
+    name: MeshManager
+  - uid: RandomBuffUtils.FutileExtend.UniformLighting
+    name: UniformLighting
+- uid: RandomBuffUtils.MixedUI
+  name: RandomBuffUtils.MixedUI
+  items:
+  - uid: RandomBuffUtils.MixedUI.OpKeyBinderEx
+    name: OpKeyBinderEx
+- uid: RandomBuffUtils.ObjectExtend
+  name: RandomBuffUtils.ObjectExtend
+  items:
+  - uid: RandomBuffUtils.ObjectExtend.BuffAbstractPhysicalObjectAttribute
+    name: BuffAbstractPhysicalObjectAttribute
+  - uid: RandomBuffUtils.ObjectExtend.BuffAbstractPhysicalObjectPropertyAttribute
+    name: BuffAbstractPhysicalObjectPropertyAttribute
+  - uid: RandomBuffUtils.ObjectExtend.IBuffAbstractPhysicalObjectInitialization
+    name: IBuffAbstractPhysicalObjectInitialization
+- uid: RandomBuffUtils.ParticleSystem
+  name: RandomBuffUtils.ParticleSystem
+  items:
+  - uid: RandomBuffUtils.ParticleSystem.Particle
+    name: Particle
+  - uid: RandomBuffUtils.ParticleSystem.Particle.MoveType
+    name: Particle.MoveType
+  - uid: RandomBuffUtils.ParticleSystem.Particle.ParticleUniqueData
+    name: Particle.ParticleUniqueData
+  - uid: RandomBuffUtils.ParticleSystem.Particle.SpriteInitParam
+    name: Particle.SpriteInitParam
+  - uid: RandomBuffUtils.ParticleSystem.ParticleEmitter
+    name: ParticleEmitter
+  - uid: RandomBuffUtils.ParticleSystem.ParticleSystem
+    name: ParticleSystem
+- uid: RandomBuffUtils.ParticleSystem.EmitterModules
+  name: RandomBuffUtils.ParticleSystem.EmitterModules
+  items:
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.AddElement
+    name: AddElement
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.AlphaOverLife
+    name: AlphaOverLife
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.BindEmitterToPhysicalObject
+    name: BindEmitterToPhysicalObject
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.BurstSpawnerModule
+    name: BurstSpawnerModule
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.ColorOverLife
+    name: ColorOverLife
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.ConstantAcc
+    name: ConstantAcc
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.DefaultDrawer
+    name: DefaultDrawer
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.EmitterModule
+    name: EmitterModule
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.Gravity
+    name: Gravity
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.IOwnParticleUniqueData
+    name: IOwnParticleUniqueData
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.IParticleClearSpritesModule
+    name: IParticleClearSpritesModule
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.IParticleDieModules
+    name: IParticleDieModules
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.IParticleDrawModules
+    name: IParticleDrawModules
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.IParticleInitModule
+    name: IParticleInitModule
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.IParticleInitSpritesAndAddToContainerModules
+    name: IParticleInitSpritesAndAddToContainerModules
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.IParticleUpdateModule
+    name: IParticleUpdateModule
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.PositionOverLife
+    name: PositionOverLife
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.RateSpawnerModule
+    name: RateSpawnerModule
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.RotationOverLife
+    name: RotationOverLife
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.ScaleOverLife
+    name: ScaleOverLife
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetConstColor
+    name: SetConstColor
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetConstVelociy
+    name: SetConstVelociy
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetCustomPos
+    name: SetCustomPos
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetCustomRotation
+    name: SetCustomRotation
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetEmitterLife
+    name: SetEmitterLife
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetMoveType
+    name: SetMoveType
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetRandomColor
+    name: SetRandomColor
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetRandomLife
+    name: SetRandomLife
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetRandomPos
+    name: SetRandomPos
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetRandomRotation
+    name: SetRandomRotation
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetRandomScale
+    name: SetRandomScale
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetRandomVelocity
+    name: SetRandomVelocity
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetSphericalVelocity
+    name: SetSphericalVelocity
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SetVelociyFromEmitter
+    name: SetVelociyFromEmitter
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SimpleParticlePhysic
+    name: SimpleParticlePhysic
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SimpleParticlePhysic.PhysicData
+    name: SimpleParticlePhysic.PhysicData
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.SpawnModule
+    name: SpawnModule
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.TrailDrawer
+    name: TrailDrawer
+  - uid: RandomBuffUtils.ParticleSystem.EmitterModules.VelocityOverLife
+    name: VelocityOverLife
+- uid: RandomBuffUtils.Simple3D
+  name: RandomBuffUtils.Simple3D
+  items:
+  - uid: RandomBuffUtils.Simple3D.AnimationTimeLine
+    name: AnimationTimeLine
+  - uid: RandomBuffUtils.Simple3D.AnimationTimeLine.ITrack
+    name: AnimationTimeLine.ITrack
+  - uid: RandomBuffUtils.Simple3D.AnimationTimeLine.Track`1
+    name: AnimationTimeLine.Track<T>
+  - uid: RandomBuffUtils.Simple3D.Mesh3D
+    name: Mesh3D
+  - uid: RandomBuffUtils.Simple3D.Mesh3D.TriangleFacet
+    name: Mesh3D.TriangleFacet
+  - uid: RandomBuffUtils.Simple3D.Mesh3DDotMatrixRenderer
+    name: Mesh3DDotMatrixRenderer
+  - uid: RandomBuffUtils.Simple3D.Mesh3DFacetRenderer
+    name: Mesh3DFacetRenderer
+  - uid: RandomBuffUtils.Simple3D.Mesh3DFacetRenderer.FacetRepresent
+    name: Mesh3DFacetRenderer.FacetRepresent
+  - uid: RandomBuffUtils.Simple3D.Mesh3DFrameRenderer
+    name: Mesh3DFrameRenderer
+  - uid: RandomBuffUtils.Simple3D.Mesh3DFrameRenderer.LineRepresent
+    name: Mesh3DFrameRenderer.LineRepresent
+  - uid: RandomBuffUtils.Simple3D.Mesh3DRenderer
+    name: Mesh3DRenderer
+  - uid: RandomBuffUtils.Simple3D.Mesh3DRenderer.Overlay
+    name: Mesh3DRenderer.Overlay
+  - uid: RandomBuffUtils.Simple3D.MeshHelper
+    name: MeshHelper
+  - uid: RandomBuffUtils.Simple3D.SpecialMesh3DFrameRenderer
+    name: SpecialMesh3DFrameRenderer
+memberLayout: SamePage

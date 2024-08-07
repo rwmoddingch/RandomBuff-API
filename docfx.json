@@ -13,7 +13,7 @@
       ],
       "disableGitFeatures": false,
       "disableDefaultFilter": false,
-      "dest": "docs/api"
+      "dest": "api"
     }
   ],
   "build": {
