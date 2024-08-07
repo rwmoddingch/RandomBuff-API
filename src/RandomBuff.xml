@@ -1,0 +1,1437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RandomBuff</name>
+    </assembly>
+    <members>
+        <member name="M:RandomBuff.BuffCore.TryGetBuff(RandomBuff.Core.Buff.BuffID,RandomBuff.Core.Buff.IBuff@)">
+            <summary>
+            获取ID对应的Buff
+            </summary>
+            <param name="id"></param>
+            <param name="buff"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.TryGetBuff``1(RandomBuff.Core.Buff.BuffID,``0@)">
+            <summary>
+            获取ID对应的Buff
+            </summary>
+            <typeparam name="TBuff"></typeparam>
+            <param name="id"></param>
+            <param name="buff"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.GetBuff(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            获取ID对应的Buff,可能为空
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.CreateNewBuff(RandomBuff.Core.Buff.BuffID,System.Boolean)">
+            <summary>
+            创建新的Buff
+            </summary>
+            <param name="id">待创建的BuffID</param>
+            <param name="needStack">是否需要堆叠，非堆叠情况下尝试创建不会重复创建仅会获取到第一个</param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.CreateNewBuff``1(RandomBuff.Core.Buff.BuffID,System.Boolean)">
+            <summary>
+            创建新的Buff
+            </summary>
+            <param name="id">待创建的BuffID</param>
+            <param name="needStack">是否需要堆叠，非堆叠情况下尝试创建不会重复创建仅会获取到第一个</param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.GetBuff``1(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            获取ID对应的Buff,可能为空
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.UnstackBuff(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            删除或减少卡牌叠层
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.GetBuffData(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            获取ID对应的BuffData,可能为空
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.GetBuffData``1(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            获取ID对应的BuffData,可能为空
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.GetAllBuffIds">
+            <summary>
+            获取当前猫的BuffList
+            可能为空
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.GetAllBuffIds(SlugcatStats.Name)">
+            <summary>
+            获取全部的Buff，特定猫
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.BuffMode(RainWorld)">
+            <summary>
+            是否是卡牌模式
+            </summary>
+            <param name="rainWorld"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.GetStaticData(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            获取静态信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffCore.RequestPickerInGame(System.Action{RandomBuff.Core.Buff.BuffID},System.Collections.Generic.List{System.ValueTuple{RandomBuff.Core.Buff.BuffID,RandomBuff.Core.Buff.BuffID}},System.Int32)">
+            <summary>
+            在游戏内请求抽卡
+            </summary>
+            <param name="pickedCallBack"></param>
+            <param name="buffs"></param>
+            <param name="selectNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.BuffPlugin.Log(System.Object)">
+            <summary>
+            会额外保存到../RainWorld_Data/StreamingAssets/buffcore.log
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:RandomBuff.HooksApplier">
+            <summary>
+            用来简化应用钩子的过程（懒得自己写了）
+            继承这个类并且编写一个名为 HooksOn 的公共静态方法即可
+            </summary>
+        </member>
+        <member name="T:RandomBuff.BuffResource">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:RandomBuff.BuffResource.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:RandomBuff.BuffResource.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性，对
+              使用此强类型资源类的所有资源查找执行重写。
+            </summary>
+        </member>
+        <member name="P:RandomBuff.BuffResource.CommonlyUsed">
+            <summary>
+              查找类似 1234567890-=！@#￥%……&amp;*()~:&quot;{}[]|\?/&lt;&gt;,.;&apos;+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ的一是了我不人在他有这个上们来到时大地为子中你说生国年着就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发当没成只如事把还用第样道想作种开美总从无情己面最女但现前些所同日手又行意动方期它头经长儿回位分爱老因很给名法间斯知世什两次使身者被高已亲其进此话常与活正感见明问力理尔点文几定本公特做外孩相西果走将月十实向声车全信重三机工物气每并别真打太新比才便夫再书部水像眼等体却加电主界门利海受听表德少克代员许稜先口由死安写性马光白或住难望教命花结乐色更拉东神记处让母父应直字场平报友关放至张认接告入笑内英军候民岁往何度山觉路带万男边风解叫任金快原吃妈变通师立象数四失满战远格士音轻目条呢病始达深完今提求清王化空业思切怎非找片罗钱紶吗语元喜曾离飞科言干流欢约各即指合反题必该论交终林请医晚制球决窢传画保读运及则房早院量苦火布品近坐产答星精视五连司巴奇管类未朋且婚台夜青北队久乎越观落尽形影红爸百令周吧识步希亚术留市半热送兴造谈 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:RandomBuff.BuffResource.GB2312">
+            <summary>
+              查找类似 1234567890-=！@#￥%……&amp;*()~:&quot;{}[]|\?/&lt;&gt;,.;&apos;+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ〔〕一丨丿丶乛一乙二十丁厂七卜八人入儿九匕几了乃刀力又乜三干亍于亏士土工才下寸丈大兀与万弋上小口山巾千乞川亿彳个么久勺丸夕凡及广亡门丫义之尸已巳弓己卫孑子孓也女飞刃习叉马乡幺丰王井开亓夫天元无韦云专丐扎廿艺木五支厅卅不仄太犬区历友歹尤匹厄车巨牙屯戈比互切瓦止少曰日中贝内水冈见手午牛毛气壬升夭长仁仃什片仆仉化仇币仂仍仅斤爪反兮刈介父爻从仑今凶分乏公仓月氏勿风欠丹匀乌勾殳凤卞六文亢方闩火为斗忆计订户讣认讥冗心尹尺夬引丑爿巴孔队办以允邓予劝双书毋幻玉刊末未示击邗戋打巧正扑卉扒邛功扔去甘世艾艽古节艿本术札可叵匝丙左厉丕石右布夯龙戊平灭轧东匜劢卡北占凸卢业旧帅归目旦且叮叶甲申号电田由卟叭只央史叱叽兄叼叩叫叻叨另叹冉皿凹囚四生失矢氕乍禾仨仕丘付仗代仙仟仡仫伋们仪白仔他仞斥卮瓜乎丛令用甩印氐乐尔句匆犰册卯犯外处冬鸟务刍包饥主市庀邝立冯邙玄闪兰半汀汁汇头汈汉忉宁穴宄它讦讧讨写让礼讪讫训必议讯记永司尻尼民弗弘阢出阡辽奶奴尕加召皮边孕发圣对弁台矛 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:RandomBuff.BuffResource.NormalTemplate">
+             <summary>
+               查找类似 {
+                &quot;Name&quot; : &quot;Normal&quot;,
+                &quot;ID&quot; :&quot;Normal&quot;,
+                &quot;ExpMultiply&quot;: 1,
+                &quot;PCount&quot; : 1,
+                &quot;NCount&quot; : 1
+            } 的本地化字符串。
+             </summary>
+        </member>
+        <member name="M:RandomBuff.Cardpedia.Elements.Config.OpCardpediaChainBox.#ctor(System.String,UnityEngine.Vector2,UnityEngine.Vector2,System.Boolean,RandomBuff.Cardpedia.Elements.Config.OpCardpediaChainBox.IScrollBoxHandler)">
+            <summary>
+            使用左上角锚点
+            </summary>
+            <param name="defaultPos"></param>
+            <param name="size"></param>
+            <param name="autoSetPosInScrollBox">自动反向计算坐标（适应scrollBox）</param>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.IBuff">
+            <summary>
+            Buff接口
+            不应被除了Buff以外的类型继承
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.Buff`2">
+            <summary>
+            Buff基类
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.Buff`2.Data">
+            <summary>
+            数据类属性，只读
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.Buff`2.Instance">
+            <summary>
+            单例获取
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.Buff`2.ID">
+            <summary>
+            增益ID
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.Buff`2.Active">
+            <summary>
+            是否处于激活状态
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.Buff`2.Triggerable">
+            <summary>
+            是否可以触发
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.Buff`2.Trigger(RainWorldGame)">
+            <summary>
+            点击触发方法，仅对可触发的增益有效。
+            </summary>
+            <param name="game"></param>
+            <returns>返回true时，代表该增益已经完全触发，增益将会被减少堆叠层数（或移除）</returns>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.Buff`2.MyTimer">
+            <summary>
+            卡牌的计时器，在构造方法中赋值后，不可为null
+            赋值后可以在任意时机修改值
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.Buff`2.Update(RainWorldGame)">
+            <summary>
+            增益的更新方法，与RainWorldGame.Update同步
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.Buff`2.Destroy">
+            <summary>
+            增益的销毁方法，当该增益实例被移除的时候会调用
+            注意：当前轮回结束时会清除全部的Buff物体
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.Buff`2.TriggerSelf(System.Boolean)">
+            <summary>
+            强制触发增益效果，一般用于显示HUD反馈
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.RuntimeBuff">
+            <summary>
+            动态创建Buff的基类
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.BuffData">
+            <summary>
+            Buff的数据类，包括动态数据（单一猫存档内数据）
+            会序列化全部包含JsonProperty的属性
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.BuffData.CycleEnd">
+            <summary>
+            轮回结束时候触发
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.BuffData.NeedDeletion">
+            <summary>
+            如果为true，则在周期结束时自动移除Buff
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.BuffData.Stack">
+            <summary>
+            重复选取
+            增加堆叠次数
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.BuffData.UnStack">
+            <summary>
+            增加减少堆叠次数，在删除的时候被调用
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.BuffData.CanStackMore">
+            <summary>
+            是否可以继续增加
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.BuffData.DataLoaded(System.Boolean)">
+            <summary>
+            当存档数据读取后调用
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.CountableBuffData">
+            <summary>
+            带轮回倒数的BuffData
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.CountableBuffData.MaxCycleCount">
+            <summary>
+            最大轮回数量
+            超过数量会删除
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.BuffID">
+            <summary>
+            Buff的ID，和内置的ExtEnum用法相同。
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.BuffStaticData">
+             <summary>
+             Buff静态数据
+            
+             对外接口
+             </summary>
+            <summary>
+            Buff静态数据
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.BuffStaticData.TryLoadStaticData(System.IO.FileInfo,System.String,RandomBuff.Core.Buff.BuffStaticData@)">
+            <summary>
+            尝试读取staticData
+            失败则返回false newData = null
+            </summary>
+            <param name="jsonFile"></param>
+            <param name="dirPath">当前目录相对地址</param>
+            <param name="newData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.BuffStaticData.ToDebugString">
+            <summary>
+            测试用输出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.BuffTimer">
+            <summary>
+            卡牌的计时器
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.BuffTimer.TimerCallBack">
+            <summary>
+            计时器完成时的回调
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.BuffTimer.Paused">
+            <summary>
+            是否暂停计时器
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.BuffTimer.Update(RainWorldGame)">
+            <summary>
+            在更新中调用
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.BuffTimer.Reset">
+            <summary>
+            重置定时器
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.BuffTimer.ApplyStrategy(RandomBuff.Core.Buff.BuffTimerDisplayStrategy)">
+            <summary>
+            应用显示策略
+            </summary>
+            <param name="strategy"></param>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.StepedCountBuffTimer">
+            <summary>
+            累积计时器
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.DownCountBuffTimer">
+            <summary>
+            倒计时计时器
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.UpCountBuffTimer">
+            <summary>
+            正计时计时器
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.BuffTimerDisplayStrategy">
+            <summary>
+            卡牌计时器的显示策略
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.BuffTimerDisplayStrategy.Second">
+            <summary>
+            绑定的计时器
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Buff.BuffTimerDisplayStrategy.DisplayThisFrame">
+            <summary>
+            该秒内是否展示计时器（在UI中实现）
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.SpanTimerDisplayStrategy">
+            <summary>
+            时间跨显示策略
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Buff.SpanTimerDisplayStrategy.#ctor(RandomBuff.Core.Buff.SpanTimerDisplayStrategy.BuffTimeSpan[])">
+            <summary>
+            </summary>
+            <param name="timer"></param>
+            <param name="ranges">键为时间跨下限</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="T:RandomBuff.Core.Buff.SpanTimerDisplayStrategy.BuffTimeSpan">
+            <summary>
+            表示一个以秒为单位的时间跨，上下界均包含在内
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Entry.BuffRegister">
+             <summary>
+             保存Buff的注册信息，负责保存BuffData/Buff的Type信息
+             不保存实际的data类型
+             不随存档变化刷新
+            
+             外部接口
+             </summary>
+            <summary>
+            保存Buff的注册信息，负责保存BuffData/Buff的Type信息
+            不保存实际的data类型
+            不随存档变化刷新
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.RegisterBuff``3(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            注册新的Buff，并且包含hook
+            </summary>
+            <typeparam name="TBuffType"></typeparam>
+            <typeparam name="TDataType"></typeparam>
+            <typeparam name="THookType"></typeparam>
+            <param name="id"></param>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.RegisterBuff``2(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            注册新的buff，不包含hook
+            </summary>
+            <typeparam name="TBuffType"></typeparam>
+            <typeparam name="TDataType"></typeparam>
+            <param name="id"></param>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.RegisterBuff``1(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            无Buff类型注册Buff
+            </summary>
+            <typeparam name="THookType"></typeparam>
+            <param name="id"></param>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.RegisterBuff(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            无Buff类型注册Buff
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.RegisterQuestType``1">
+            <summary>
+            注册新的任务种类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.RegisterCosmeticUnlock``1">
+            <summary>
+            注册新的装饰解锁要素
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.RegisterGachaTemplate``1(RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplateID,RandomBuff.Core.Game.Settings.Conditions.ConditionID[])">
+            <summary>
+            注册新的抽卡模式
+            </summary>
+            <typeparam name="TTemplateType"></typeparam>
+            <param name="id">ID</param>
+            <param name="banList">ban掉的条件</param>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.RegisterCondition``1(RandomBuff.Core.Game.Settings.Conditions.ConditionID,System.String,RandomBuff.Core.Game.Settings.Conditions.ConditionID,RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplateID[])">
+            <summary>
+            注册新的通关条件
+            </summary>
+            <typeparam name="TConditionType"></typeparam>
+            <param name="id">ID</param>
+            <param name="displayName">显示类别名称</param>
+            <param name="parentId">继承某个条件的Ban情况</param>
+            <param name="banList">Ban掉特定的游玩模式，请保证对应的GachaTemplate已经注册</param>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.RegisterCondition``1(RandomBuff.Core.Game.Settings.Conditions.ConditionID,System.String,System.Boolean,RandomBuff.Core.Game.Settings.Conditions.ConditionID)">
+            <summary>
+            注册新的通关条件
+            </summary>
+            <typeparam name="TConditionType"></typeparam>
+            <param name="id">ID</param>
+            <param name="displayName">显示类别名称</param>
+            <param name="isHidden">是否为隐藏条件（不可随机抽取）</param>
+            <param name="parentId">继承某个条件的Ban情况</param>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.RegisterMission(RandomBuff.Core.Game.Settings.Missions.MissionID,RandomBuff.Core.Game.Settings.Missions.Mission)">
+            <summary>
+            注册新的使命
+            </summary>
+            <param name="ID"></param>
+            <param name="mission"></param>
+        </member>
+        <member name="M:RandomBuff.Core.Entry.BuffRegister.BuildAllDataStaticWarpper">
+            <summary>
+            给BuffData设置config的warpper
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Game.Settings.Missions.Mission.VerifyId">
+            <summary>
+            验证依赖是否完整
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RandomBuff.Core.Game.Settings.Conditions.ConditionID">
+            <summary>
+            结算条件ID
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Game.Settings.Conditions.Condition.Exp">
+            <summary>
+            完成获取的经验值
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Game.Settings.Conditions.Condition.TypeName">
+            <summary>
+            条件种类名
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Game.Settings.Conditions.Condition.Finished">
+            <summary>
+            条件是否完成
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplateID">
+            <summary>
+            抽卡模式ID
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate">
+            <summary>
+            负责控制游戏模式
+            基类
+            只能用字段，不能用属性
+            </summary>
+        </member>
+        <member name="F:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.ExpMultiply">
+            <summary>
+            总经验的加成倍数
+            可以通过json更改
+            </summary>
+        </member>
+        <member name="F:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.PocketPackMultiply">
+            <summary>
+            自由选卡加成
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.NeedRandomStart">
+            <summary>
+            是否需要随机出生点
+            </summary>
+        </member>
+        <member name="F:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.ForceStartPos">
+            <summary>
+            固定出生点，null为无指定（继承对应猫默认）
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.NewGame">
+            <summary>
+            创建新游戏时触发
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.SessionEnd(RainWorldGame)">
+            <summary>
+            轮回结束时触发
+            </summary>
+            <param name="game"></param>
+        </member>
+        <member name="M:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.InGameUpdate(RainWorldGame)">
+            <summary>
+            游戏进行时update触发
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.EnterGame(RainWorldGame)">
+            <summary>
+            每轮回进入游戏时触发
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.OnDestroy">
+            <summary>
+            在任何删除时候触发
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.TemplateLoaded">
+            <summary>
+            当数据读取完成触发
+            </summary>
+            <returns>返回false证明数据损坏</returns>
+        </member>
+        <member name="P:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.TemplateDetail">
+            <summary>
+            当前抽卡模版的详情信息
+            </summary>
+        </member>
+        <member name="F:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.TemplateDescription">
+            <summary>
+            当前抽卡模版的通用介绍
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.CurrentPacket">
+            <summary>
+            当前的抽卡信息
+            </summary>
+        </member>
+        <member name="F:RandomBuff.Core.Game.Settings.GachaTemplate.GachaTemplate.CanStackByPassage">
+            <summary>
+            是否能消耗通行证来堆叠
+            </summary>
+        </member>
+        <member name="F:RandomBuff.Core.Game.Settings.GameSetting.conditions">
+            <summary>
+            不能直接移除，记得调用RemoveCondition,ClearCondition
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Game.Settings.GameSetting.GetRandomCondition">
+            <summary>
+            返回获取的条件以及是否还能获取
+            canGetMore == false则不能继续获取
+            如果非得获取那返回(null,false)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RandomBuff.Core.Game.BuffPicker">
+            <summary>
+            获取下次可以抽的卡
+            如果buff抽到了特殊那下次抽debuff把count改多就好了
+            返回值为空证明库存不足
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Game.BuffPoolManager">
+             <summary>
+             游戏局内逻辑控制
+             每局游戏会重新创建
+            
+             哈哈没有外部接口！
+             </summary>
+             <summary>
+             游戏局内逻辑控制
+             每局游戏会重新创建
+            
+             内部接口
+             </summary>
+            <summary>
+            游戏局内逻辑控制
+            每局游戏会重新创建
+            
+            游戏结算的数据传递
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.GetBuff(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            获取ID对应的Buff
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.GetBuffData(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            获取ID对应的BuffData
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.TryGetBuff(RandomBuff.Core.Buff.BuffID,RandomBuff.Core.Buff.IBuff@)">
+            <summary>
+            获取ID对应的Buff
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.GetAllBuffIds">
+            <summary>
+            获取全部启用的BuffID
+            外部方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.UnstackBuff(RandomBuff.Core.Buff.BuffID,System.Boolean)">
+            <summary>
+            减少游戏内BuffData的堆叠层数
+            层数为0或非堆叠自动删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.CreateNewBuffData(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            局内创建BuffData
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.LoadGameBuff(RainWorldGame)">
+            <summary>
+            创建新的BuffPool
+            </summary>
+            <param name="game"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.Destroy">
+            <summary>
+            周期结束后自动销毁
+            若 NeedDeletion == true 则移除Buff
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.WinGame(System.Boolean)">
+            <summary>
+            周期结束后的移除或更新
+            若 NeedDeletion == true 则移除Buff
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.CreateBuff(RandomBuff.Core.Buff.BuffID,System.Boolean)">
+            <summary>
+            添加Buff实例
+            理论上不应出现添加BuffDataManager不存在的实例的情况
+            </summary>
+            <param name="id"></param>
+            <param name="needStack"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.RemoveBuff(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            游戏进行中删除Buff
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:RandomBuff.Core.Game.BuffPoolManager.RemoveBuffAndData(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            移除游戏内BuffData和Buff
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="F:RandomBuff.Core.Game.BuffPoolManager.cycleDatas">
+            轮回内的临时数据
+        </member>
+        <member name="T:RandomBuff.Core.Progression.Quest.BuffQuest">
+            <summary>
+            储存Quest的信息，并负责实际判断，
+            但是不存存档变化，不储存数据（数据请到BuffPlayerData）
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Progression.Quest.BuffQuest.QuestName">
+            <summary>
+            任务名称
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Progression.Quest.BuffQuest.QuestId">
+            <summary>
+            任务Id
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Progression.Quest.BuffQuest.QuestColor">
+            <summary>
+            任务颜色
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Progression.Quest.BuffQuest.UnlockItem">
+            <summary>
+            已解锁物品
+            </summary>
+        </member>
+        <member name="F:RandomBuff.Core.Progression.Quest.BuffQuest.QuestConditions">
+            <summary>
+            解锁条件
+            目前只存在与关联，没有或关联
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Progression.Quest.BuffQuest.UpdateUnlockedState(RandomBuff.Core.Game.WinGamePackage)">
+            <summary>
+            在结算时调用，返回更新后的任务解锁状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Progression.Quest.BuffQuest.VerifyData">
+            <summary>
+            在初始化时调用，验证数据是否有效
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RandomBuff.Core.Progression.Quest.Condition.QuestConditionJsonGetType">
+            <summary>
+            不要理会这个 偷懒拿名称用的
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.Progression.Quest.Condition.QuestCondition">
+            <summary>
+            Quest条件信息
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Core.Progression.Quest.Condition.QuestCondition.TypeName">
+            <summary>
+            类型名称
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.Progression.Quest.Condition.QuestCondition.ConditionMessage">
+            <summary>
+            任务提示文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Progression.Quest.Condition.QuestCondition.UpdateUnlockedState(RandomBuff.Core.Game.WinGamePackage)">
+            <summary>
+            在结算时调用，返回更新后的任务解锁状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.Progression.Quest.Condition.QuestCondition.VerifyData">
+            <summary>
+            在初始化时调用，验证数据是否有效
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RandomBuff.Core.SaveData.BuffConfigManager">
+            <summary>
+            Buff静态数据的保存 仅跟随saveSlot变化而更换
+            公开部分
+            </summary>
+            <summary>
+            内部实例部分
+            </summary>
+            <summary>
+            静态部分
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffConfigManager.ToStringData">
+            <summary>
+            序列化保存配置信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffConfigManager.InitBuffStaticData">
+            <summary>
+            读取static data
+            post init时调用
+            文件格式 mod根目录/buffassets/卡牌名/卡牌资源
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffConfigManager.InitTemplateStaticData">
+            <summary>
+            读取templateData
+            post init时调用
+            文件格式 mod根目录/bufftemplates/
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffConfigManager.InitQuestData">
+            <summary>
+            读取templateData
+            post init时调用
+            文件格式 mod根目录/buffquests/
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigAttribute">
+            <summary>
+            BuffData 中
+            若属性设置该attribute则会设置get函数获取自定义配置
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigEnumAttribute">
+            <summary>
+            普通enum或extEnum类型，将会在ui中生成下拉选框，针对KeyCode类型将会生成特殊的案件绑定器
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigTwoValueAttribute">
+            <summary>
+            两值类型，将会在ui中生成单选按钮
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigRangeAttribute">
+            <summary>
+            范围类型，将会在ui中生成滑条
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:RandomBuff.Core.SaveData.BuffConfig.CustomBuffConfigListAttribute">
+            <summary>
+            列表类型，将会在ui中生成下拉选框
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffConfig.BuffConfigurableManager.GetAllConfigurableForID(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            获取该buff下所有的configurable，如果没有会返回空数组
+            </summary>
+            <param name="buffID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RandomBuff.Core.SaveData.BuffDataManager">
+             <summary>
+             管理本存档下已加载过的全部BuffData（所有猫）
+             更换存档会重新创建
+            
+             外部接口
+             没有提供直接获取字典的方式防止意外的外部修改
+             </summary>
+             <summary>
+             管理本存档下已加载过的全部BuffData（所有猫）
+             更换存档会重新创建
+            
+             内部接口
+             </summary>
+            <summary>
+            私有部分
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.GetBuffData(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            获取BuffData
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.GetAllBuffIds(SlugcatStats.Name)">
+            <summary>
+            获取全部启用的BuffID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.GetOrCreateBuffData(RandomBuff.Core.Buff.BuffID,System.Boolean)">
+            <summary>
+            获取或创建BuffData
+            仅限非游戏局内使用
+            内部方法 
+            </summary>
+            <param name="id">ID</param>
+            <param name="createOrStack">当true时如果BuffData不存在则创建，存在则叠加</param>
+            <returns>返回值可能为空</returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.EnterGameFromMenu(SlugcatStats.Name)">
+            <summary>
+            从Menu进入游戏调用
+            进行初始化
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.WinGame(RandomBuff.Core.Game.BuffPoolManager,System.Collections.Generic.Dictionary{RandomBuff.Core.Buff.BuffID,RandomBuff.Core.Buff.BuffData},RandomBuff.Core.Game.Settings.GameSetting,System.Boolean)">
+            <summary>
+            轮回结束时更新 通过BuffPoolManager调用
+            负责把临时数据转移到永久
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.GetDataDictionary(SlugcatStats.Name)">
+            <summary>
+            获取或创建单猫存档下的BuffData字典
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.GetGameSetting(SlugcatStats.Name)">
+            <summary>
+            获取目前的setting信息
+            不会为空
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.SetGameSetting(SlugcatStats.Name,RandomBuff.Core.Game.Settings.GameSetting)">
+            <summary>
+            设置setting信息
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.IsHasMalnourished(SlugcatStats.Name)">
+            <summary>
+            是否存在挨饿存档
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.CleanMalnourishedData">
+            <summary>
+            删除挨饿存档
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.DeleteSaveData(SlugcatStats.Name)">
+            <summary>
+            删除单一猫存档
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.DeleteAll">
+            <summary>
+            删除存档
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.ToStringData">
+            <summary>
+            创建新的Setting实例
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+            <summary>
+            序列化存档信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.InitStringData(System.String,RandomBuff.Core.SaveData.BuffFormatVersion)">
+            <summary>
+            初始化存档信息
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.InitStringBuffData(System.String,RandomBuff.Core.SaveData.BuffFormatVersion)">
+            <summary>
+            初始化存档信息
+            </summary>
+            <param name="file"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffDataManager.InitStringSetting(System.String,RandomBuff.Core.SaveData.BuffFormatVersion)">
+            <summary>
+            初始化setting信息
+            </summary>
+            <param name="file"></param>
+            <param name="version"></param>
+        </member>
+        <member name="F:RandomBuff.Core.SaveData.BuffDataManager.allDatas">
+            <summary>
+            该存档槽下全部猫的存档数据
+            </summary>
+        </member>
+        <member name="F:RandomBuff.Core.SaveData.BuffDataManager.ukSlugcatDatas">
+            如果被卸载导致slugcat name或data缺失，则暂时储存在此处
+        </member>
+        <member name="T:RandomBuff.Core.SaveData.BuffFormatVersion">
+            <summary>
+            保存格式版本
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.SaveData.BuffFile">
+            <summary>
+            一个存档读取接口 实际不用修改
+            会在更改存档时重新创建
+            </summary>
+            <summary>
+            静态成员变量
+            包括一些hook
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffFile.SaveFile">
+            <summary>
+            保存数据
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffFile.SaveConfigFile">
+            <summary>
+            会在切回主界面自动调用
+            保存配置文件
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Core.SaveData.BuffFile.BuffFileCompletedCallBack">
+            <summary>
+            当存档完全读取完毕的回调
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.AddCollect(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            添加新的BuffID
+            </summary>
+            <param name="buffId"></param>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.ContainsCollect(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            判断对应ID是否在收藏
+            </summary>
+            <param name="buffId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.GetAllCollect">
+            <summary>
+            获取所有可用的收集过的BuffID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.IsCollected(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            是否已经收集过
+            </summary>
+            <param name="buffId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.GetKeyBind(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            获取按键绑定，若不存在则返回KeyCode.None.ToString()
+            </summary>
+            <param name="buffId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.SetKeyBind(RandomBuff.Core.Buff.BuffID,System.String)">
+            <summary>
+            设置按键绑定
+            </summary>
+            <param name="buffId"></param>
+            <param name="keyBind"></param>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.IsQuestUnlocked(System.String)">
+            <summary>
+            判断任务是否已经完成
+            </summary>
+            <param name="questId"></param>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.UpdateQuestConditionState(System.String,System.Int32)">
+            <summary>
+            更新同步任务条件状态
+            </summary>
+            <param name="questId"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.GetQuestConditionStateCount(System.String)">
+            <summary>
+            获取对应id任务的条件完成数量
+            </summary>
+            <param name="questId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.GetAllCompleteQuests">
+            <summary>
+            获取所有完成的任务，注意可能会包含卸载的mod内的任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.UpdateQuestState(RandomBuff.Core.Game.WinGamePackage)">
+            <summary>
+            更新任务状态，并返回新完成的任务list
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.IsCosmeticEnable(System.String)">
+            <summary>
+            获取是否启用了解锁的装饰
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Core.SaveData.BuffPlayerData.SetCosmeticEnable(System.String,System.Boolean)">
+            <summary>
+            设置解锁装置的启用状态
+            </summary>
+            <param name="id"></param>
+            <param name="newEnable"></param>
+        </member>
+        <member name="T:RandomBuff.Helper">
+            <summary>
+            存放帮助类的类
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Helper.InputButtonTracker">
+            <summary>
+            按键跟踪简化类
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Helper.InputButtonTracker.#ctor(System.Func{System.Boolean},System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="trackFunction">按键更新的方法</param>
+            <param name="trackUp">是否追踪按键信号上升沿</param>
+            <param name="trackDouble">是否追踪双击</param>
+            <param name="doubleThreashold">双击追踪的间隔</param>
+        </member>
+        <member name="M:RandomBuff.Helper.InputButtonTracker.Update(System.Boolean@,System.Boolean@)">
+            <summary>
+            在逻辑更新中调用
+            </summary>
+            <param name="triggleSingle">为true时表示单击触发</param>
+            <param name="triggleDouble">为true时表示双击触发</param>
+            
+        </member>
+        <member name="M:RandomBuff.Helper.GetUninit``1">
+            <summary>
+            获取未初始化的实例
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Helper.LerpEase(System.Single)">
+            <summary>
+            缓动函数
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RandomBuff.Render.CardRender.BuffCardRendererBase">
+            <summary>
+            拆解部分功能以支持更自由的自定义
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.BuffCardRendererBase.Rotation">
+            <summary>
+            表示卡牌物体的旋转
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.BuffCardRendererBase.Depth">
+            <summary>
+            卡牌物体与相机的距离
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.CardCameraController.CardDirty">
+            <summary>
+            控制相机是否启用渲染，只在必要的时候（比如卡牌发生变换）启用一帧渲染。
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Render.CardRender.CardRendererManager.UpdateInactiveRendererTimers(System.Single)">
+            <summary>
+            维护一个有时间限制的对象池，当不活跃程度超过一定时间后，将会销毁该对象。
+            </summary>
+            <param name="deltaTime"></param>
+        </member>
+        <member name="T:RandomBuff.Render.CardRender.CardBasicAssets">
+            <summary>
+            卡牌渲染基础资源类
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.CardBasicAssets.CardHighlightShader">
+            <summary>
+            卡牌高光shader
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.CardBasicAssets.CardTextShader">
+            <summary>
+            卡牌字体shader
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.CardBasicAssets.CardBasicShader">
+            <summary>
+            卡牌shader
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.CardBasicAssets.TitleFont">
+            <summary>
+            卡牌标题的字体
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.CardBasicAssets.DiscriptionFont">
+            <summary>
+            卡牌介绍使用的字体
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.CardBasicAssets.MoonBack">
+            <summary>
+            正面增益的卡背
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.CardBasicAssets.FPBack">
+            <summary>
+            负面增益的卡背
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.CardRender.CardBasicAssets.SlugBack">
+            <summary>
+            中性增益的卡背
+            </summary>
+        </member>
+        <member name="F:RandomBuff.Render.CardRender.CardBasicAssets.RenderTextureSize">
+            <summary>
+            卡牌渲染的贴图尺寸
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Render.CardRender.CardBasicAssets.LoadAssets">
+            <summary>
+            从文件中加载资源
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Render.CardRender.CardTextController.UpdateTextMesh(System.Boolean)">
+            <summary>
+            根据参数t更新文本的状态，t在0到1之间
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="T:RandomBuff.Render.CardRender.SingleTextCardRenderer">
+            <summary>
+            只渲染单个文本的卡牌
+            不使用 BuffStaticData
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Render.UI.BuffCard">
+            <summary>
+            UI层初步封装卡牌渲染器
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Render.UI.BuffCardAnimator">
+            <summary>
+            卡牌动画机
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Render.UI.ClearStateAnimator">
+            <summary>
+            测试无状态
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Render.UI.MousePreviewAnimator">
+            <summary>
+            测试鼠标交互状态
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Render.UI.BuffCardSlot.RemoveCard(RandomBuff.Render.UI.BuffCard,System.Boolean)">
+            <summary>
+            从卡槽中移除卡牌
+            </summary>
+            <param name="buffCard"></param>
+            <param name="destroyAfterRemove">移除后是否直接销毁卡牌</param>
+        </member>
+        <member name="M:RandomBuff.Render.UI.BuffCardSlot.RemoveCard(RandomBuff.Core.Buff.BuffID,System.Boolean)">
+            <summary>
+            从卡槽中移除卡牌
+            </summary>
+            <param name="buffID"></param>
+            <param name="destroyAfterRemove">移除后是否直接销毁卡牌</param>
+        </member>
+        <member name="T:RandomBuff.Render.UI.BasicInGameBuffCardSlot">
+            <summary>
+            基础的游戏内卡槽
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Render.UI.CardPickerSlot">
+            <summary>
+            选卡卡槽
+            </summary>
+        </member>
+        <member name="P:RandomBuff.Render.UI.CardPickerSlot.AllFinished">
+            <summary>
+            是否完成所有抽卡并且卡牌动画均完成
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Render.UI.CardPickerSlot.#ctor(RandomBuff.Render.UI.BasicInGameBuffCardSlot,System.Action{RandomBuff.Core.Buff.BuffID},RandomBuff.Core.Buff.BuffID[],RandomBuff.Core.Buff.BuffID[],System.Int32,RandomBuff.Render.UI.BuffSlotTitle,System.Boolean,System.String)">
+            <summary>
+            创建一次抽卡卡槽
+            </summary>
+            <param name="inGameBuffCardSlot">当前界面的基础游戏内卡槽，可以置空</param>
+            <param name="selectCardCallBack">选择一张卡牌的回调，可能会触发多次</param>
+            <param name="majorSelections">主抽卡选项</param>
+            <param name="additionalSelections">附加抽卡选项，需要和主抽卡选项的长度一致</param>
+            <param name="numOfChoices">完成本次抽卡需要抽取的卡牌数量</param>
+        </member>
+        <member name="T:RandomBuff.Render.UI.BuffGameMenuSlot">
+            <summary>
+            buff目录界面的静态展示卡槽
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Render.UI.BuffGameMenuSlot.SetupBuffs(System.Collections.Generic.List{SlugcatStats.Name})">
+            <summary>
+            初始化存档中不同角色对应的卡牌
+            </summary>
+            <param name="nameOrders"></param>
+        </member>
+        <member name="M:RandomBuff.Render.UI.BuffGameMenuSlot.UpdatePage(System.Int32)">
+            <summary>
+            更新当前页面
+            </summary>
+            <param name="page"></param>
+        </member>
+        <member name="M:RandomBuff.Render.UI.BuffGameMenuSlot.CreateCard(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            创建卡牌，并且根据其类型加入不同的列表管理
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:RandomBuff.Render.UI.CommmmmmmmmmmmmmpleteInGameSlot">
+            <summary>
+            完整的游戏内卡槽，包含入卡动画和抽卡界面
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Render.UI.CommmmmmmmmmmmmmpleteInGameSlot.AppendCardDirectly(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            不经过加卡动画直接加入卡槽
+            </summary>
+            <param name="buffID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Render.UI.CommmmmmmmmmmmmmpleteInGameSlot.AppendCardDirectly(RandomBuff.Render.UI.BuffCard)">
+            <summary>
+            不经过加卡动画直接加入卡槽
+            </summary>
+            <param name="buffCard"></param>
+        </member>
+        <member name="M:RandomBuff.Render.UI.CommmmmmmmmmmmmmpleteInGameSlot.RequestPickCards(System.Action{RandomBuff.Core.Buff.BuffID},RandomBuff.Core.Buff.BuffID[],RandomBuff.Core.Buff.BuffID[],System.Int32)">
+            <summary>
+            申请抽卡
+            完成一个抽卡之后才会进行下一个
+            </summary>
+            <param name="selectCardCallBack">完成抽卡后的回调</param>
+            <param name="majorSelections">主抽卡选项</param>
+            <param name="additionalSelections">附加抽卡选项</param>
+            <param name="numOfChoices">完成抽卡所需的选择数</param>
+        </member>
+        <member name="M:RandomBuff.Render.UI.CommmmmmmmmmmmmmpleteInGameSlot.RequestPickCards(System.Action{RandomBuff.Core.Buff.BuffID},System.Func{RandomBuff.Core.Buff.BuffID[]},System.Func{RandomBuff.Core.Buff.BuffID[]},System.Int32)">
+            <summary>
+            申请抽卡，利用委托延迟创建抽取的卡牌
+            完成一个抽卡之后才会进行下一个
+            </summary>
+            <param name="selectCardCallBack">完成抽卡后的回调</param>
+            <param name="createMajorSelections">创建主抽卡选项的委托</param>
+            <param name="createAdditionalSelections">创建附加抽卡选项的委托，返回数组长度需要和主抽卡选项一致</param>
+            <param name="numOfChoices">完成抽卡所需的选择数</param>
+            <exception cref="T:System.ArgumentException">附加抽卡选项与主抽卡选项不一致时会抛出此异常</exception>
+        </member>
+        <member name="M:RandomBuff.Render.UI.CommmmmmmmmmmmmmpleteInGameSlot.TriggerBuff(RandomBuff.Core.Buff.BuffID)">
+            <summary>
+            触发卡牌，播放动画
+            </summary>
+            <param name="buffID"></param>
+        </member>
+        <member name="T:RandomBuff.Render.UI.CommmmmmmmmmmmmmpleteInGameSlot.ActivateCardAnimSlot">
+            <summary>
+            用来实现加卡动画的卡槽
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Render.UI.CardpediaSlot">
+            <summary>
+            卡牌收藏的卡槽
+            </summary>
+        </member>
+        <member name="M:RandomBuff.Render.UI.CardPickerInteractionManager.GetCardShowIndex(RandomBuff.Render.UI.BuffCard,System.Int32@)">
+            <summary>
+            获取卡牌的聚焦坐标
+            </summary>
+            <param name="buffCard"></param>
+            <param name="majorOrAdditional">为0时为普通抽卡，为1时为加强卡主卡，为-1时为加强卡附卡</param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuff.Render.UI.Component.BuffCardTimer.SingleNumber.#ctor(RandomBuff.Render.UI.Component.BuffCardTimer,System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="cardTimer"></param>
+             <param name="Digit">位数</param>
+        </member>
+        <member name="T:RandomBuff.Render.UI.ExceptionTracker.ExceptionTracker.ExceptionButton">
+            <summary>
+            右上角定位
+            </summary>
+        </member>
+        <member name="T:RandomBuff.Render.UI.DefaultInput">
+            <summary>
+            基本的鼠标操控模式
+            </summary>
+        </member>
+    </members>
+</doc>

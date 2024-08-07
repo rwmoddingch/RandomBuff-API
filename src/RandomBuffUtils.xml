@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RandomBuffUtils</name>
+    </assembly>
+    <members>
+        <member name="T:RandomBuffUtils.BuffEvent">
+            <summary>
+            管理一些通用的事件
+            </summary>
+            <summary>
+            Hook函数
+            </summary>
+        </member>
+        <member name="E:RandomBuffUtils.BuffEvent.OnCreatureKilled">
+            <summary>
+            生物被玩家击杀时调用
+            </summary>
+        </member>
+        <member name="E:RandomBuffUtils.BuffEvent.OnPlayerChangeRoom">
+            <summary>
+            玩家更换房间调用
+            </summary>
+        </member>
+        <member name="E:RandomBuffUtils.BuffEvent.OnReachNewRoom">
+            <summary>
+            玩家到达新房间调用
+            </summary>
+        </member>
+        <member name="E:RandomBuffUtils.BuffEvent.OnGateLoaded">
+            <summary>
+            业力门被加载时调用
+            </summary>
+        </member>
+        <member name="E:RandomBuffUtils.BuffEvent.OnGateOpened">
+            <summary>
+            业力门被开启时调用
+            </summary>
+        </member>
+        <member name="E:RandomBuffUtils.BuffEvent.OnAnyKeyDown">
+            <summary>
+            当有任何输入时调用
+            请务必及时取消减少监听时间
+            </summary>
+        </member>
+        <member name="E:RandomBuffUtils.BuffEvent.OnAchievementCompleted">
+            <summary>
+            当成就达成时调用
+            </summary>
+        </member>
+        <member name="M:RandomBuffUtils.BuffEvents.BuffRoomReachEvent.GetReachedRoomNames">
+            <summary>
+            获取所有到达过的房间。请尽量不要高频使用该方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:RandomBuffUtils.BuffEvents.BuffRoomReachEvent.OnRoomReached">
+            <summary>
+            玩家初次到达某房间时触发，包括业力门和避难所房间
+            </summary>
+        </member>
+        <member name="M:RandomBuffUtils.BuffInput.GetKeyDown(System.String)">
+            <summary>
+            获取按键输入
+            </summary>
+            <param name="action">通过OnAnyKeyDown获取的keyCode值</param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuffUtils.BuffInput.GetKey(System.String)">
+            <summary>
+            获取按键输入
+            </summary>
+            <param name="action">通过OnAnyKeyDown获取的keyCode值</param>
+            <returns></returns>
+        </member>
+        <member name="M:RandomBuffUtils.BuffPostEffectManager.RemoveEffect(RandomBuffUtils.BuffPostEffect)">
+            <summary>
+            移除后期处理效果
+            </summary>
+            <param name="effect"></param>
+        </member>
+        <member name="M:RandomBuffUtils.BuffPostEffectManager.AddEffect(RandomBuffUtils.BuffPostEffect,RandomBuffUtils.BuffPostEffectManager.InsertPosition)">
+            <summary>
+            添加新的后期处理效果
+            </summary>
+            <param name="effect">要添加的效果</param>
+            <param name="pos">添加顺序位置</param>
+        </member>
+        <member name="T:RandomBuffUtils.BuffPostEffect">
+            <summary>
+            后期处理效果的基类
+            </summary>
+        </member>
+        <member name="P:RandomBuffUtils.BuffPostEffect.Layer">
+            <summary>
+            后期处理效果的层数，层数越大，处理越靠后
+            </summary>
+        </member>
+        <member name="M:RandomBuffUtils.BuffPostEffect.OnRenderImage(UnityEngine.RenderTexture,UnityEngine.RenderTexture)">
+            <summary>
+            进行后期处理的函数，
+            注意务必至少进行一次source到dest的Blit否则可能会出现未定义行为。
+            </summary>
+            <param name="source">原始贴图</param>
+            <param name="destination">目标贴图</param>
+        </member>
+        <member name="M:RandomBuffUtils.BuffPostEffect.Update">
+            <summary>
+            Unity的update，注意时间间隔为Time.deltatime
+            </summary>
+        </member>
+        <member name="M:RandomBuffUtils.BuffPostEffect.Destroy">
+            <summary>
+            删除函数，
+            务必要在不使用的时候删除
+            </summary>
+        </member>
+        <member name="T:RandomBuffUtils.BuffPostEffectLimitTime">
+            <summary>
+            限定时间的后期处理基类，会在持续时间结束后自动删除。
+            注意若持续时间为负数则会永久存在。
+            </summary>
+        </member>
+        <member name="P:RandomBuffUtils.BuffPostEffectLimitTime.LerpAlpha">
+            <summary>
+            过渡的alpha值
+            </summary>
+        </member>
+        <member name="M:RandomBuffUtils.BuffSounds.LoadSound(SoundID,System.String,RandomBuffUtils.BuffSoundGroupData,RandomBuffUtils.BuffSoundData[])">
+            <summary>
+            读取自定义位置的声音
+            </summary>
+            <param name="id">声音对应的ID</param>
+            <param name="soundPath">声音文件对应的数据</param>
+            <param name="groupData">该组声音的属性</param>
+            <param name="datas">每个声音切片的属性</param>
+        </member>
+        <member name="M:RandomBuffUtils.FutileExtend.FMesh.#ctor(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            FMesh构造函数
+            </summary>
+            <param name="meshName">模型名称</param>
+            <param name="imageName">模型对应贴图</param>
+            <param name="sortFacts">是否对模型面进行深度排序（保证前后覆盖效果）</param>
+            <param name="customNormals">是否启用法线</param>
+            <param name="customColor">是否启用顶点色</param>
+        </member>
+        <member name="M:RandomBuffUtils.FutileExtend.FMesh.#ctor(RandomBuffUtils.FutileExtend.FMesh.Mesh3DAsset,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            FMesh构造函数
+            </summary>
+            <param name="mesh">模型资源</param>
+            <param name="imageName">模型对应贴图</param>
+            <param name="sortFacts">是否对模型面进行深度排序（保证前后覆盖效果）</param>
+            <param name="customNormals">是否启用法线</param>
+            <param name="customColor">是否启用顶点色</param>
+        </member>
+        <member name="P:RandomBuffUtils.FutileExtend.FMesh.rotation3D">
+            <summary>
+            模型三维旋转
+            </summary>
+        </member>
+        <member name="P:RandomBuffUtils.FutileExtend.FMesh.quaternion">
+            <summary>
+            模型三维旋转（四元数版）
+            </summary>
+        </member>
+        <member name="P:RandomBuffUtils.FutileExtend.FMesh.color">
+            <summary>
+            模型颜色
+            </summary>
+        </member>
+        <member name="P:RandomBuffUtils.FutileExtend.FMesh.customColor">
+            <summary>
+            是否启用了顶点色
+            </summary>
+        </member>
+        <member name="P:RandomBuffUtils.FutileExtend.FMesh.customNormals">
+            <summary>
+            是否启用法线
+            </summary>
+        </member>
+        <member name="P:RandomBuffUtils.FutileExtend.FMesh.Mesh">
+            <summary>
+            模型资源
+            </summary>
+        </member>
+        <member name="P:RandomBuffUtils.FutileExtend.FMesh.Scale3D">
+            <summary>
+            模型三维缩放
+            </summary>
+        </member>
+        <member name="P:RandomBuffUtils.FutileExtend.FMesh.SortFacts">
+            <summary>
+            模型面排序选项
+            </summary>
+        </member>
+        <member name="M:RandomBuffUtils.FutileExtend.FMesh.MoveVertice(System.Int32,UnityEngine.Vector3)">
+            <summary>
+            移动单一顶点
+            </summary>
+            <param name="index"></param>
+            <param name="newPos"></param>
+        </member>
+        <member name="M:RandomBuffUtils.FutileExtend.FMesh.SetVerticeColor(System.Int32,UnityEngine.Color)">
+            <summary>
+            设置顶点颜色，请确保构造函数时启用了customColor
+            </summary>
+            <param name="index"></param>
+            <param name="color"></param>
+        </member>
+        <member name="M:RandomBuffUtils.FutileExtend.FMesh.Mesh3DAsset.BuildDefaultNormals">
+            <summary>
+            根据顶点位置信息构造默认法线
+            </summary>
+        </member>
+        <member name="M:RandomBuffUtils.FutileExtend.MeshManager.LoadMesh(System.String,System.String)">
+            <summary>
+            读取模型文件，仅支持obj格式
+            </summary>
+            <param name="name">读取后模型名称</param>
+            <param name="path">模型文件位置</param>
+            <returns></returns>
+            <exception cref="T:FutileException"></exception>
+        </member>
+        <member name="M:RandomBuffUtils.GhostEffect.#ctor(GraphicsModule,System.Int32,System.Single,System.Single,System.Nullable{UnityEngine.Vector2},System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="graphicsModule">目标对象，会拷贝其中所有的贴图</param>
+            <param name="life">生命周期</param>
+            <param name="alpha">初始透明度</param>
+            <param name="velMulti">速度乘数，如果你不希望残影移动，那么请给0</param>
+        </member>
+        <member name="M:RandomBuffUtils.GhostEmitter.#ctor(GraphicsModule,Room,System.Int32,System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="graphicsModule">目标对象，会拷贝其中所有的贴图</param>
+            <param name="room"></param>
+            <param name="ghostLife">残影的生命周期</param>
+            <param name="ghostAlpha">初始透明度</param>
+            <param name="ghostVelMulti">速度乘数，如果你不希望残影移动，那么请给0</param>
+        </member>
+        <member name="M:RandomBuffUtils.GhostPeriodicEmitter.#ctor(GraphicsModule,Room,System.Int32,System.Int32,System.Int32,System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="graphicsModule"></param>
+            <param name="room"></param>
+            <param name="emitterLife">发射器的声明周期，当赋值小于0时表示无限周期，仅当目标房间不同的时候才会销毁</param>
+            <param name="emitCounter">每个残影间隔多少帧产生</param>
+        </member>
+        <member name="T:RandomBuffUtils.ObjectExtend.BuffAbstractPhysicalObjectAttribute">
+            <summary>
+            在继承于AbstractPhysicObject及其子类的类型前加该Attribute，
+            可以自动构造序列化及反序列化函数。（即可以进行轮回间保存）
+            
+            若该类型同时在Fisobs注册会导致未定义行为。
+            </summary>
+        </member>
+        <member name="T:RandomBuffUtils.ObjectExtend.BuffAbstractPhysicalObjectPropertyAttribute">
+            <summary>
+            仅在标有BuffAbstractPhysicalObject特性的类型内有效
+            在需要进行存储的数据前加上该Attribute可以自动进行数据保存读取
+             
+            若该类型同时在Fisobs注册会导致未定义行为。
+            </summary>
+        </member>
+        <member name="T:RandomBuffUtils.ObjectExtend.IBuffAbstractPhysicalObjectInitialization">
+            <summary>
+            若不继承基类的构造函数请在自己的BuffAbstractPhysicalObject使用该接口
+            </summary>
+        </member>
+        <member name="M:RandomBuffUtils.Simple3D.Mesh3DFacetRenderer.FacetRepresent.CaculateNormalAndSort(UnityEngine.Vector3[])">
+            <summary>
+            法线方向默认从原点指向外部
+            </summary>
+            <param name="vertices"></param>
+        </member>
+        <member name="T:CustomSaveTx.DeathPersistentSaveDataRx">
+            <summary>
+            DeathPersistentSaveData拓展
+            </summary>
+        </member>
+        <member name="M:CustomSaveTx.DeathPersistentSaveDataRx.GetTreatmentOfType``1">
+            <summary>
+            通过类型来获取Treatment，这也是最建议使用的方法。
+            但最好不要在循环中使用该方法。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:CustomSaveTx.DeathPersistentSaveDataTx">
+            <summary>
+            如果你需要保存自己的数据，请继承该类并重写部分方法。
+            </summary>
+        </member>
+        <member name="F:CustomSaveTx.DeathPersistentSaveDataTx.slugName">
+            <summary>
+            当前对应的存档名
+            </summary>
+        </member>
+        <member name="P:CustomSaveTx.DeathPersistentSaveDataTx.header">
+            <summary>
+            该存档单元对应的标题头，需要为唯一命名，所以请尽量起一个独特的名字
+            </summary>
+        </member>
+        <member name="M:CustomSaveTx.DeathPersistentSaveDataTx.SaveToString(System.Boolean,System.Boolean)">
+            <summary>
+            保存方法
+            </summary>
+            <param name="saveAsIfPlayerDied">玩家是否死亡</param>
+            <param name="saveAsIfPlayerQuit">玩家是否主动退出</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomSaveTx.DeathPersistentSaveDataTx.LoadDatas(System.String)">
+            <summary>
+            加载数据的方法，提供的数据为 SaveToString 格式化处理后的字符串
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:CustomSaveTx.DeathPersistentSaveDataTx.ClearDataForNewSaveState(SlugcatStats.Name)">
+            <summary>
+            为新存档清除当前保存的数据
+            </summary>
+            <param name="newSlugName"></param>
+        </member>
+        <member name="T:CustomSaveTx.TestSaveUnit">
+            <summary>
+            一个简易的示范类，请不要直接使用该类
+            </summary>
+        </member>
+    </members>
+</doc>
