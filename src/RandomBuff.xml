@@ -110,6 +110,32 @@
             <param name="selectNumber"></param>
             <returns></returns>
         </member>
+        <member name="E:RandomBuff.BuffCore.OnCustomStaticDataLoaded">
+            <summary>
+            创建BuffData时触发，使用自定义的staticData
+            </summary>
+        </member>
+        <member name="E:RandomBuff.BuffCore.OnGameSettingSpecialSetup">
+            <summary>
+            调整游戏模式的初始存档状态
+            </summary>
+        </member>
+        <member name="E:RandomBuff.BuffCore.IsFullSpRoomScriptNeed">
+            <summary>
+            是否启用全RoomScript
+            </summary>
+        </member>
+        <member name="E:RandomBuff.BuffCore.IsSpRoomScriptNeedRemoveAtNormal">
+            <summary>
+            是否禁用用某房间的RoomScript，返回true则禁用
+            是增量
+            </summary>
+        </member>
+        <member name="E:RandomBuff.BuffCore.OnClampKarmaForBuffMode">
+            <summary>
+            调整游戏的业力状态
+            </summary>
+        </member>
         <member name="M:RandomBuff.BuffPlugin.Log(System.Object)">
             <summary>
             会额外保存到../RainWorld_Data/StreamingAssets/buffcore.log
